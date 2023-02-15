@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{%block title%}
+    My Blog
+{% endblock %}
+
+{%block css_files%}
+    <link rel="stylesheet" href="{% static "blog/includes/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{%endblock%}
+
+
+{%block content%}
+    
+    
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/richard.jpg" %}" alt="Richard - The Author"/>
+            <h2> {{author|upper}}'s BLOG</h2>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Tellus at urna condimentum mattis pellentesque id nibh tortor.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2> My Latest Thoughts </h2>
+
+        <ul>
+            {% for post in posts %}
+                {%include 'blog/includes/posts.html'%}
+            {%endfor%}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2> What I do </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Viverra accumsan in nisl nisi scelerisque eu. 
+            Gravida quis blandit turpis cursus in hac habitasse platea. Interdum consectetur libero id 
+            faucibus nisl tincidunt eget.Adipiscing diam donec adipiscing tristique risus nec 
+            feugiat in fermentum.
+        </p>
+
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+            Egestas purus viverra accumsan in nisl. Nibh cras pulvinar mattis nunc.
+        </p>
+    </section>    
+
+
+
+{%endblock%}
