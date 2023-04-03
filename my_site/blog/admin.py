@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Post ,Author, Tag #Import Model to register
+from .models import Post ,Author, Tag, Comment #Import Model to register
 
 
 @admin.register(Author)
@@ -21,3 +21,7 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display=("user_name", "post")
